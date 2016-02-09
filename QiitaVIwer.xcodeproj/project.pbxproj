@@ -12,6 +12,8 @@
 		94E4C2181C6966A9000C9B14 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 94E4C2161C6966A9000C9B14 /* Main.storyboard */; };
 		94E4C21A1C6966A9000C9B14 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 94E4C2191C6966A9000C9B14 /* Assets.xcassets */; };
 		94E4C21D1C6966A9000C9B14 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 94E4C21B1C6966A9000C9B14 /* LaunchScreen.storyboard */; };
+		94E4C2251C696835000C9B14 /* Alamofire.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 94E4C2241C696835000C9B14 /* Alamofire.framework */; };
+		94E4C2271C696840000C9B14 /* SwiftyJSON.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 94E4C2261C696840000C9B14 /* SwiftyJSON.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -22,6 +24,8 @@
 		94E4C2191C6966A9000C9B14 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		94E4C21C1C6966A9000C9B14 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		94E4C21E1C6966A9000C9B14 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		94E4C2241C696835000C9B14 /* Alamofire.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Alamofire.framework; path = Carthage/Build/iOS/Alamofire.framework; sourceTree = "<group>"; };
+		94E4C2261C696840000C9B14 /* SwiftyJSON.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SwiftyJSON.framework; path = Carthage/Build/iOS/SwiftyJSON.framework; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -29,6 +33,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				94E4C2271C696840000C9B14 /* SwiftyJSON.framework in Frameworks */,
+				94E4C2251C696835000C9B14 /* Alamofire.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -38,6 +44,8 @@
 		94E4C2061C6966A9000C9B14 = {
 			isa = PBXGroup;
 			children = (
+				94E4C2261C696840000C9B14 /* SwiftyJSON.framework */,
+				94E4C2241C696835000C9B14 /* Alamofire.framework */,
 				94E4C2111C6966A9000C9B14 /* QiitaVIwer */,
 				94E4C2101C6966A9000C9B14 /* Products */,
 			);
@@ -247,6 +255,10 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Carthage/Build/iOS",
+				);
 				INFOPLIST_FILE = QiitaVIwer/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.sumida.QiitaVIwer;
@@ -258,6 +270,10 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Carthage/Build/iOS",
+				);
 				INFOPLIST_FILE = QiitaVIwer/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.sumida.QiitaVIwer;
