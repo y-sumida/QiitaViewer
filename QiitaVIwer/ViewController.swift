@@ -40,6 +40,7 @@ class ViewController: UIViewController {
                 let json = JSON(object)
                 json.forEach { (_, json) in
                     print(json["title"].string)
+                    print(json["user"]["id"].string)
                 }
         }
     }
