@@ -12,6 +12,7 @@ import SwiftyJSON
 
 class ViewController: UIViewController {
     let table = UITableView()
+    var articles: [[String: String?]] = []
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -39,9 +40,13 @@ class ViewController: UIViewController {
 
                 let json = JSON(object)
                 json.forEach { (_, json) in
-                    print(json["title"].string)
-                    print(json["user"]["id"].string)
+                    let article: [String: String?] = [
+                        "title:": json["title"].string,
+                        "userId": json["user"]["id"].string
+                    ]
+                    self.articles.append(article)
                 }
+                print(self.articles)
         }
     }
 }
