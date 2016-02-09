@@ -9,10 +9,16 @@
 import UIKit
 
 class ViewController: UIViewController {
+    let table = UITableView()
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view, typically from a nib.
+
+        title = "新着記事"
+
+        table.frame = view.frame
+        view.addSubview(table)
+
     }
 
     override func didReceiveMemoryWarning() {
