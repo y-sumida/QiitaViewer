@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import Alamofire
 
 class ViewController: UIViewController {
     let table = UITableView()
@@ -19,11 +20,20 @@ class ViewController: UIViewController {
         table.frame = view.frame
         view.addSubview(table)
 
+        getArticles()
+
     }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
+    }
+
+    func getArticles() {
+        Alamofire.request(.GET, "https://qiita.com/api/v2/items")
+            .responseJSON { response in
+                print(response.result.value)
+        }
     }
 
 
