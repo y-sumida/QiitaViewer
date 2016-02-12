@@ -10,7 +10,7 @@ import UIKit
 import Alamofire
 import SwiftyJSON
 
-class ViewController: UIViewController {
+class ViewController: UIViewController, UITableViewDataSource {
     let table = UITableView()
     var articles: [[String: String?]] = []
 
@@ -21,6 +21,7 @@ class ViewController: UIViewController {
 
         table.frame = view.frame
         view.addSubview(table)
+        table.dataSource = self
 
         getArticles()
 
@@ -41,13 +42,27 @@ class ViewController: UIViewController {
                 let json = JSON(object)
                 json.forEach { (_, json) in
                     let article: [String: String?] = [
-                        "title:": json["title"].string,
+                        "title": json["title"].string,
                         "userId": json["user"]["id"].string
                     ]
                     self.articles.append(article)
                 }
                 print(self.articles)
+                self.table.reloadData()
         }
+    }
+
+    func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return articles.count
+    }
+
+    func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
+        let cell = UITableViewCell(style: .Subtitle, reuseIdentifier: "cell")
+        let article = articles[indexPath.row]
+        cell.textLabel?.text = article["title"]!
+        cell.detailTextLabel?.text = article["userId"]!
+
+        return cell
     }
 }
 
