@@ -10,7 +10,7 @@ import UIKit
 import Alamofire
 import SwiftyJSON
 
-class ViewController: UIViewController, UITableViewDataSource {
+class ViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
     let table = UITableView()
     var articles: [[String: String?]] = []
 
@@ -22,6 +22,7 @@ class ViewController: UIViewController, UITableViewDataSource {
         table.frame = view.frame
         view.addSubview(table)
         table.dataSource = self
+        table.delegate = self
 
         //セルの高さを動的にするため
         table.estimatedRowHeight = 20
@@ -71,6 +72,10 @@ class ViewController: UIViewController, UITableViewDataSource {
         cell.detailTextLabel?.text = article["userId"]!
 
         return cell
+    }
+
+    func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
+        print(indexPath.row)
     }
 }
 
