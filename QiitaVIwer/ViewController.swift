@@ -23,6 +23,10 @@ class ViewController: UIViewController, UITableViewDataSource {
         view.addSubview(table)
         table.dataSource = self
 
+        //セルの高さを動的にするため
+        table.estimatedRowHeight = 20
+        table.rowHeight = UITableViewAutomaticDimension
+
         getArticles()
 
     }
@@ -59,6 +63,10 @@ class ViewController: UIViewController, UITableViewDataSource {
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         let cell = UITableViewCell(style: .Subtitle, reuseIdentifier: "cell")
         let article = articles[indexPath.row]
+
+        //セルの高さを動的にするため
+        cell.textLabel?.numberOfLines = 0
+
         cell.textLabel?.text = article["title"]!
         cell.detailTextLabel?.text = article["userId"]!
 
