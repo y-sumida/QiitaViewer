@@ -76,6 +76,14 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
 
     func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
         print(indexPath.row)
+        self.showWebView("showWebPage")
+    }
+
+    func showWebView(next:String) {
+        let storyboard:UIStoryboard = UIStoryboard(name: "Main", bundle:nil)
+        let receiveview:WebViewController = storyboard.instantiateViewControllerWithIdentifier(next) as! WebViewController
+        receiveview.url = "https://pivot.jp"
+        self.presentViewController(receiveview, animated: false, completion: nil)
     }
 }
 

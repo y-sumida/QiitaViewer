@@ -40,5 +40,23 @@
             </objects>
             <point key="canvasLocation" x="-1864" y="136"/>
         </scene>
+        <!--Web View Controller-->
+        <scene sceneID="tGO-Fx-jEe">
+            <objects>
+                <viewController storyboardIdentifier="showWebPage" id="CTl-v1-h4F" customClass="WebViewController" customModule="QiitaVIwer" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="YBu-9y-FbH"/>
+                        <viewControllerLayoutGuide type="bottom" id="qhj-gd-d9w"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="c6M-z0-SCf">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="PlU-3g-L2z" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-1199" y="136"/>
+        </scene>
     </scenes>
 </document>
