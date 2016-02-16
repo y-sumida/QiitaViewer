@@ -48,7 +48,8 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
                 json.forEach { (_, json) in
                     let article: [String: String?] = [
                         "title": json["title"].string,
-                        "userId": json["user"]["id"].string
+                        "userId": json["user"]["id"].string,
+                        "url": json["url"].string
                     ]
                     self.articles.append(article)
                 }
@@ -76,14 +77,16 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
 
     func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
         print(indexPath.row)
-        self.showWebView("showWebPage")
+        let article = articles[indexPath.row]
+        let url = article["url"]!
+        self.showWebView("showWebPage", url: url!)
     }
 
-    func showWebView(next:String) {
-        
+    func showWebView(next:String, url:String) {
+
         let storyboard:UIStoryboard = UIStoryboard(name: "Main", bundle:nil)
         let receiveview:WebViewController = storyboard.instantiateViewControllerWithIdentifier(next) as! WebViewController
-        receiveview.url = "http://yahoo.co.jp"
+        receiveview.url = url
         self.navigationController?.pushViewController(receiveview, animated: true)
     }
 }
