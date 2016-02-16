@@ -80,10 +80,11 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
     }
 
     func showWebView(next:String) {
+        
         let storyboard:UIStoryboard = UIStoryboard(name: "Main", bundle:nil)
         let receiveview:WebViewController = storyboard.instantiateViewControllerWithIdentifier(next) as! WebViewController
         receiveview.url = "http://yahoo.co.jp"
-        self.presentViewController(receiveview, animated: false, completion: nil)
+        self.navigationController?.pushViewController(receiveview, animated: true)
     }
 }
 
