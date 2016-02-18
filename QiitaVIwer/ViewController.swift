@@ -13,6 +13,7 @@ import SwiftyJSON
 class ViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
     let table = UITableView()
     var articles: [[String: String?]] = []
+    var page = 1
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -40,7 +41,7 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
     }
 
     func getArticles() {
-        Alamofire.request(.GET, "https://qiita.com/api/v2/items")
+        Alamofire.request(.GET, "https://qiita.com/api/v2/items", parameters: ["page": page])
             .responseJSON { response in
                 guard let object = response.result.value else {
                     return
