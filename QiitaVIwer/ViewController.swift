@@ -28,8 +28,10 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
         table.estimatedRowHeight = 20
         table.rowHeight = UITableViewAutomaticDimension
 
-        getArticles()
+        let reloadButton = UIBarButtonItem(barButtonSystemItem: UIBarButtonSystemItem.Refresh, target: self, action: "onClickReloadButton:")
+        self.navigationItem.setRightBarButtonItem(reloadButton, animated: false)
 
+        getArticles()
     }
 
     override func didReceiveMemoryWarning() {
@@ -88,6 +90,10 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
         let receiveview:WebViewController = storyboard.instantiateViewControllerWithIdentifier(next) as! WebViewController
         receiveview.url = url
         self.navigationController?.pushViewController(receiveview, animated: true)
+    }
+
+    func onClickReloadButton(sender: UIButton) {
+        getArticles()
     }
 }
 
