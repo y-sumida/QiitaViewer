@@ -104,6 +104,11 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
         if(self.table.contentOffset.y < (self.table.contentSize.height - self.table.bounds.size.height)) {
             return
         }
+
+        if (!self.table.dragging) {
+            return
+        }
+
         print(self.table.contentOffset.y)
         print(self.table.contentSize.height)
         print(self.table.bounds.size.height)
