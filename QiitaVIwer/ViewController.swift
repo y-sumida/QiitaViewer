@@ -98,5 +98,16 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
         articles = []
         getArticles()
     }
+
+    func scrollViewDidScroll(scrollView: UIScrollView) {
+        //TODO これだとアニメーションの分だけ複数回一番下と判断される
+        if(self.table.contentOffset.y < (self.table.contentSize.height - self.table.bounds.size.height)) {
+            return
+        }
+        print(self.table.contentOffset.y)
+        print(self.table.contentSize.height)
+        print(self.table.bounds.size.height)
+        print("scroll end")
+    }
 }
 
