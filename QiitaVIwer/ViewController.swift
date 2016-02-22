@@ -25,6 +25,9 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
         table.dataSource = self
         table.delegate = self
 
+        //一旦バウンドさせない設定にしてみる
+        table.bounces = false
+
         //セルの高さを動的にするため
         table.estimatedRowHeight = 20
         table.rowHeight = UITableViewAutomaticDimension
@@ -41,6 +44,7 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
     }
 
     func getArticles() {
+        print("getArticles\(page)")
         Alamofire.request(.GET, "https://qiita.com/api/v2/items", parameters: ["page": page])
             .responseJSON { response in
                 guard let object = response.result.value else {
@@ -56,7 +60,7 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
                     ]
                     self.articles.append(article)
                 }
-                print(self.articles)
+                //print(self.articles)
                 self.table.reloadData()
         }
     }
@@ -109,10 +113,9 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
             return
         }
 
-        print(self.table.contentOffset.y)
-        print(self.table.contentSize.height)
-        print(self.table.bounds.size.height)
-        print("scroll end")
+        if(self.page++ < 100) {
+            self.getArticles()
+        }
     }
 }
 
