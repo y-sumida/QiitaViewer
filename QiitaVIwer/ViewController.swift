@@ -102,6 +102,8 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
     func onClickReloadButton(sender: UIButton) {
         page = 1
         articles = []
+        self.table.contentOffset.y = 0
+        self.table.reloadData()
         getArticles()
     }
 
