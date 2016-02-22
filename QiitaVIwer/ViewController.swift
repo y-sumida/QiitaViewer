@@ -14,6 +14,7 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
     let table = UITableView()
     var articles: [[String: String?]] = []
     var page = 1
+    var isLoading: Bool = false
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -61,6 +62,7 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
                     self.articles.append(article)
                 }
                 //print(self.articles)
+                self.isLoading = false
                 self.table.reloadData()
         }
     }
@@ -109,9 +111,15 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
             return
         }
 
+        if (self.isLoading) {
+            return
+        }
+
         if (!self.table.dragging) {
             return
         }
+
+        self.isLoading = true
 
         if(self.page++ < 100) {
             self.getArticles()
