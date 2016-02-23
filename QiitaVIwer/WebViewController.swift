@@ -8,7 +8,7 @@
 
 import UIKit
 
-class WebViewController: UIViewController {
+class WebViewController: UIViewController, UIWebViewDelegate {
     var url:String = ""
     let webview = UIWebView()
 
@@ -16,6 +16,7 @@ class WebViewController: UIViewController {
         super.viewDidLoad()
         
         webview.frame = view.frame
+        webview.delegate = self
         self.view.addSubview(webview)
         
         openWeb()
@@ -32,4 +33,14 @@ class WebViewController: UIViewController {
         }
     }
 
+    func webViewDidFinishLoad(webView: UIWebView) {
+        if (webView.loading) {
+            return
+        }
+        print("Finish！")
+    }
+
+    func webViewDidStartLoad(webView: UIWebView) {
+        print("Loading...")
+    }
 }
