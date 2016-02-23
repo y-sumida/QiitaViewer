@@ -14,7 +14,6 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
     let table = UITableView()
     var articles: [[String: String?]] = []
     var page = 1
-    var isLoading: Bool = false
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -62,7 +61,6 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
                     self.articles.append(article)
                 }
                 //print(self.articles)
-                self.isLoading = false
                 self.table.reloadData()
         }
     }
@@ -113,28 +111,6 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
         //self.table.contentOffset.y = 0
         self.table.reloadData()
         getArticles()
-    }
-
-    func scrollViewDidScroll(scrollView: UIScrollView) {
-        return
-        //TODO これだとアニメーションの分だけ複数回一番下と判断される
-        if(self.table.contentOffset.y < (self.table.contentSize.height - self.table.bounds.size.height)) {
-            return
-        }
-
-        if (self.isLoading) {
-            return
-        }
-
-        if (!self.table.dragging) {
-            return
-        }
-
-        self.isLoading = true
-
-        if(self.page++ < 100) {
-            self.getArticles()
-        }
     }
 }
 
