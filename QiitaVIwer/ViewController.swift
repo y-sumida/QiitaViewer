@@ -73,13 +73,21 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
 
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         let cell = UITableViewCell(style: .Subtitle, reuseIdentifier: "cell")
-        let article = articles[indexPath.row]
 
-        //セルの高さを動的にするため
-        cell.textLabel?.numberOfLines = 0
+        if (articles.count > indexPath.row) {
+            let article = articles[indexPath.row]
 
-        cell.textLabel?.text = article["title"]!
-        cell.detailTextLabel?.text = article["userId"]!
+            //セルの高さを動的にするため
+            cell.textLabel?.numberOfLines = 0
+
+            cell.textLabel?.text = article["title"]!
+            cell.detailTextLabel?.text = article["userId"]!
+
+            // 最後のセル表示時にAPIコール
+            if ((articles.count) - 1 == indexPath.row && self.page++ < 100) {
+                getArticles()
+            }
+        }
 
         return cell
     }
@@ -108,6 +116,7 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
     }
 
     func scrollViewDidScroll(scrollView: UIScrollView) {
+        return
         //TODO これだとアニメーションの分だけ複数回一番下と判断される
         if(self.table.contentOffset.y < (self.table.contentSize.height - self.table.bounds.size.height)) {
             return
