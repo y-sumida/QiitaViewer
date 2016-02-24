@@ -51,28 +51,6 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
         table.reloadData()
     }
 
-    func getArticles() {
-        print("getArticles\(page)")
-        Alamofire.request(.GET, "https://qiita.com/api/v2/items", parameters: ["page": page])
-            .responseJSON { response in
-                guard let object = response.result.value else {
-                    return
-                }
-
-                let json = JSON(object)
-                json.forEach { (_, json) in
-                    let article: [String: String?] = [
-                        "title": json["title"].string,
-                        "userId": json["user"]["id"].string,
-                        "url": json["url"].string
-                    ]
-                    self.articles.append(article)
-                }
-                //print(self.articles)
-                self.table.reloadData()
-        }
-    }
-
     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return articles.count
     }
