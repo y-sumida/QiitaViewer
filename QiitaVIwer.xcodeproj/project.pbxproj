@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		94570A0D1C72A29D0060E81C /* WebViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94570A0C1C72A29D0060E81C /* WebViewController.swift */; };
+		94570A0F1C7D32AE0060E81C /* ApiClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94570A0E1C7D32AE0060E81C /* ApiClient.swift */; };
 		94E4C2131C6966A9000C9B14 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94E4C2121C6966A9000C9B14 /* AppDelegate.swift */; };
 		94E4C2151C6966A9000C9B14 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94E4C2141C6966A9000C9B14 /* ViewController.swift */; };
 		94E4C2181C6966A9000C9B14 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 94E4C2161C6966A9000C9B14 /* Main.storyboard */; };
@@ -19,6 +20,7 @@
 
 /* Begin PBXFileReference section */
 		94570A0C1C72A29D0060E81C /* WebViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WebViewController.swift; sourceTree = "<group>"; };
+		94570A0E1C7D32AE0060E81C /* ApiClient.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ApiClient.swift; path = ../ApiClient.swift; sourceTree = "<group>"; };
 		94E4C20F1C6966A9000C9B14 /* QiitaVIwer.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = QiitaVIwer.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		94E4C2121C6966A9000C9B14 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		94E4C2141C6966A9000C9B14 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -64,6 +66,7 @@
 		94E4C2111C6966A9000C9B14 /* QiitaVIwer */ = {
 			isa = PBXGroup;
 			children = (
+				94570A0E1C7D32AE0060E81C /* ApiClient.swift */,
 				94E4C2121C6966A9000C9B14 /* AppDelegate.swift */,
 				94E4C2141C6966A9000C9B14 /* ViewController.swift */,
 				94E4C2161C6966A9000C9B14 /* Main.storyboard */,
@@ -168,6 +171,7 @@
 				94E4C2151C6966A9000C9B14 /* ViewController.swift in Sources */,
 				94E4C2131C6966A9000C9B14 /* AppDelegate.swift in Sources */,
 				94570A0D1C72A29D0060E81C /* WebViewController.swift in Sources */,
+				94570A0F1C7D32AE0060E81C /* ApiClient.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

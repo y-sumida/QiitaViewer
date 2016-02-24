@@ -1,4 +1,4 @@
-//
+
 //  ViewController.swift
 //  QiitaVIwer
 //
@@ -14,6 +14,7 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
     let table = UITableView()
     var articles: [[String: String?]] = []
     var page = 1
+    let client = ApiClient()
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -35,12 +36,19 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
         let reloadButton = UIBarButtonItem(barButtonSystemItem: UIBarButtonSystemItem.Refresh, target: self, action: "onClickReloadButton:")
         self.navigationItem.setRightBarButtonItem(reloadButton, animated: false)
 
-        getArticles()
+        NSNotificationCenter.defaultCenter().addObserver(self, selector: "didFinisedRequest", name: "GotArticles", object: nil)
+
+        self.client.getArticles(self.page)
     }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
+    }
+
+    func didFinisedRequest() {
+        self.articles += self.client.articles
+        table.reloadData()
     }
 
     func getArticles() {
@@ -83,7 +91,7 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
 
             // 最後のセル表示時にAPIコール
             if ((articles.count) - 1 == indexPath.row && self.page++ < 100) {
-                getArticles()
+                self.client.getArticles(self.page)
             }
         }
 
@@ -110,7 +118,8 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
         articles = []
         //self.table.contentOffset.y = 0
         self.table.reloadData()
-        getArticles()
+
+        self.client.getArticles(self.page)
     }
 }
 
