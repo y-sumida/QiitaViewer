@@ -11,6 +11,7 @@
 		94570A0F1C7D32AE0060E81C /* ApiClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94570A0E1C7D32AE0060E81C /* ApiClient.swift */; };
 		94E3FED61C7E920800FBD017 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 94E3FED41C7E920800FBD017 /* Main.storyboard */; };
 		94E3FED91C7E921400FBD017 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 94E3FED71C7E921400FBD017 /* LaunchScreen.storyboard */; };
+		94E3FEDB1C7EDD1800FBD017 /* HRToast+UIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94E3FEDA1C7EDD1800FBD017 /* HRToast+UIView.swift */; };
 		94E4C2131C6966A9000C9B14 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94E4C2121C6966A9000C9B14 /* AppDelegate.swift */; };
 		94E4C2151C6966A9000C9B14 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94E4C2141C6966A9000C9B14 /* ViewController.swift */; };
 		94E4C21A1C6966A9000C9B14 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 94E4C2191C6966A9000C9B14 /* Assets.xcassets */; };
@@ -20,9 +21,10 @@
 
 /* Begin PBXFileReference section */
 		94570A0C1C72A29D0060E81C /* WebViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WebViewController.swift; sourceTree = "<group>"; };
-		94570A0E1C7D32AE0060E81C /* ApiClient.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ApiClient.swift; path = ../ApiClient.swift; sourceTree = "<group>"; };
+		94570A0E1C7D32AE0060E81C /* ApiClient.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ApiClient.swift; sourceTree = "<group>"; };
 		94E3FED51C7E920800FBD017 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		94E3FED81C7E921400FBD017 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		94E3FEDA1C7EDD1800FBD017 /* HRToast+UIView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "HRToast+UIView.swift"; path = "lib/HRToast+UIView.swift"; sourceTree = "<group>"; };
 		94E4C20F1C6966A9000C9B14 /* QiitaViewer.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = QiitaViewer.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		94E4C2121C6966A9000C9B14 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		94E4C2141C6966A9000C9B14 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -66,6 +68,7 @@
 		94E4C2111C6966A9000C9B14 /* QiitaViewer */ = {
 			isa = PBXGroup;
 			children = (
+				94E3FEDA1C7EDD1800FBD017 /* HRToast+UIView.swift */,
 				94570A0E1C7D32AE0060E81C /* ApiClient.swift */,
 				94E4C2121C6966A9000C9B14 /* AppDelegate.swift */,
 				94E4C2141C6966A9000C9B14 /* ViewController.swift */,
@@ -169,6 +172,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				94E4C2151C6966A9000C9B14 /* ViewController.swift in Sources */,
+				94E3FEDB1C7EDD1800FBD017 /* HRToast+UIView.swift in Sources */,
 				94E4C2131C6966A9000C9B14 /* AppDelegate.swift in Sources */,
 				94570A0D1C72A29D0060E81C /* WebViewController.swift in Sources */,
 				94570A0F1C7D32AE0060E81C /* ApiClient.swift in Sources */,
