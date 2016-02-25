@@ -39,6 +39,7 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
         NSNotificationCenter.defaultCenter().addObserver(self, selector: "didFinisedRequest", name: "GotArticles", object: nil)
 
         self.client.getArticles(self.page)
+        self.view.makeToastActivity()
     }
 
     override func didReceiveMemoryWarning() {
@@ -49,6 +50,7 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
     func didFinisedRequest() {
         self.articles += self.client.articles
         table.reloadData()
+        self.view.hideToastActivity()
     }
 
     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
