@@ -2,6 +2,6 @@
 <Workspace
    version = "1.0">
    <FileRef
-      location = "self:QiitaVIwer.xcodeproj">
+      location = "self:/Users/sumida/temp/QiitaVIwer/QiitaViewer.xcodeproj">
    </FileRef>
 </Workspace>

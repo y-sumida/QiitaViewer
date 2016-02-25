@@ -1,6 +1,6 @@
 //
 //  ApiClient.swift
-//  QiitaVIwer
+//  QiitaViewer
 //
 //  Created by 住田祐樹 on 2016/02/24.
 //  Copyright © 2016年 sumida. All rights reserved.

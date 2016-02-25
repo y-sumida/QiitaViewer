@@ -9,11 +9,11 @@
 /* Begin PBXBuildFile section */
 		94570A0D1C72A29D0060E81C /* WebViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94570A0C1C72A29D0060E81C /* WebViewController.swift */; };
 		94570A0F1C7D32AE0060E81C /* ApiClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94570A0E1C7D32AE0060E81C /* ApiClient.swift */; };
+		94E3FED61C7E920800FBD017 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 94E3FED41C7E920800FBD017 /* Main.storyboard */; };
+		94E3FED91C7E921400FBD017 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 94E3FED71C7E921400FBD017 /* LaunchScreen.storyboard */; };
 		94E4C2131C6966A9000C9B14 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94E4C2121C6966A9000C9B14 /* AppDelegate.swift */; };
 		94E4C2151C6966A9000C9B14 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94E4C2141C6966A9000C9B14 /* ViewController.swift */; };
-		94E4C2181C6966A9000C9B14 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 94E4C2161C6966A9000C9B14 /* Main.storyboard */; };
 		94E4C21A1C6966A9000C9B14 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 94E4C2191C6966A9000C9B14 /* Assets.xcassets */; };
-		94E4C21D1C6966A9000C9B14 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 94E4C21B1C6966A9000C9B14 /* LaunchScreen.storyboard */; };
 		94E4C2251C696835000C9B14 /* Alamofire.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 94E4C2241C696835000C9B14 /* Alamofire.framework */; };
 		94E4C2271C696840000C9B14 /* SwiftyJSON.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 94E4C2261C696840000C9B14 /* SwiftyJSON.framework */; };
 /* End PBXBuildFile section */
@@ -21,12 +21,12 @@
 /* Begin PBXFileReference section */
 		94570A0C1C72A29D0060E81C /* WebViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WebViewController.swift; sourceTree = "<group>"; };
 		94570A0E1C7D32AE0060E81C /* ApiClient.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ApiClient.swift; path = ../ApiClient.swift; sourceTree = "<group>"; };
-		94E4C20F1C6966A9000C9B14 /* QiitaVIwer.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = QiitaVIwer.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		94E3FED51C7E920800FBD017 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		94E3FED81C7E921400FBD017 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		94E4C20F1C6966A9000C9B14 /* QiitaViewer.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = QiitaViewer.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		94E4C2121C6966A9000C9B14 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		94E4C2141C6966A9000C9B14 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
-		94E4C2171C6966A9000C9B14 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		94E4C2191C6966A9000C9B14 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
-		94E4C21C1C6966A9000C9B14 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		94E4C21E1C6966A9000C9B14 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		94E4C2241C696835000C9B14 /* Alamofire.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Alamofire.framework; path = Carthage/Build/iOS/Alamofire.framework; sourceTree = "<group>"; };
 		94E4C2261C696840000C9B14 /* SwiftyJSON.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SwiftyJSON.framework; path = Carthage/Build/iOS/SwiftyJSON.framework; sourceTree = "<group>"; };
@@ -50,7 +50,7 @@
 			children = (
 				94E4C2261C696840000C9B14 /* SwiftyJSON.framework */,
 				94E4C2241C696835000C9B14 /* Alamofire.framework */,
-				94E4C2111C6966A9000C9B14 /* QiitaVIwer */,
+				94E4C2111C6966A9000C9B14 /* QiitaViewer */,
 				94E4C2101C6966A9000C9B14 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -58,32 +58,32 @@
 		94E4C2101C6966A9000C9B14 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				94E4C20F1C6966A9000C9B14 /* QiitaVIwer.app */,
+				94E4C20F1C6966A9000C9B14 /* QiitaViewer.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
 		};
-		94E4C2111C6966A9000C9B14 /* QiitaVIwer */ = {
+		94E4C2111C6966A9000C9B14 /* QiitaViewer */ = {
 			isa = PBXGroup;
 			children = (
 				94570A0E1C7D32AE0060E81C /* ApiClient.swift */,
 				94E4C2121C6966A9000C9B14 /* AppDelegate.swift */,
 				94E4C2141C6966A9000C9B14 /* ViewController.swift */,
-				94E4C2161C6966A9000C9B14 /* Main.storyboard */,
 				94E4C2191C6966A9000C9B14 /* Assets.xcassets */,
-				94E4C21B1C6966A9000C9B14 /* LaunchScreen.storyboard */,
 				94E4C21E1C6966A9000C9B14 /* Info.plist */,
 				94570A0C1C72A29D0060E81C /* WebViewController.swift */,
+				94E3FED41C7E920800FBD017 /* Main.storyboard */,
+				94E3FED71C7E921400FBD017 /* LaunchScreen.storyboard */,
 			);
-			path = QiitaVIwer;
+			path = QiitaViewer;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		94E4C20E1C6966A9000C9B14 /* QiitaVIwer */ = {
+		94E4C20E1C6966A9000C9B14 /* QiitaViewer */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 94E4C2211C6966A9000C9B14 /* Build configuration list for PBXNativeTarget "QiitaVIwer" */;
+			buildConfigurationList = 94E4C2211C6966A9000C9B14 /* Build configuration list for PBXNativeTarget "QiitaViewer" */;
 			buildPhases = (
 				94E4C20B1C6966A9000C9B14 /* Sources */,
 				94E4C20C1C6966A9000C9B14 /* Frameworks */,
@@ -94,9 +94,9 @@
 			);
 			dependencies = (
 			);
-			name = QiitaVIwer;
+			name = QiitaViewer;
 			productName = QiitaVIwer;
-			productReference = 94E4C20F1C6966A9000C9B14 /* QiitaVIwer.app */;
+			productReference = 94E4C20F1C6966A9000C9B14 /* QiitaViewer.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
@@ -114,7 +114,7 @@
 					};
 				};
 			};
-			buildConfigurationList = 94E4C20A1C6966A9000C9B14 /* Build configuration list for PBXProject "QiitaVIwer" */;
+			buildConfigurationList = 94E4C20A1C6966A9000C9B14 /* Build configuration list for PBXProject "QiitaViewer" */;
 			compatibilityVersion = "Xcode 3.2";
 			developmentRegion = English;
 			hasScannedForEncodings = 0;
@@ -127,7 +127,7 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				94E4C20E1C6966A9000C9B14 /* QiitaVIwer */,
+				94E4C20E1C6966A9000C9B14 /* QiitaViewer */,
 			);
 		};
 /* End PBXProject section */
@@ -137,9 +137,9 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				94E4C21D1C6966A9000C9B14 /* LaunchScreen.storyboard in Resources */,
+				94E3FED91C7E921400FBD017 /* LaunchScreen.storyboard in Resources */,
+				94E3FED61C7E920800FBD017 /* Main.storyboard in Resources */,
 				94E4C21A1C6966A9000C9B14 /* Assets.xcassets in Resources */,
-				94E4C2181C6966A9000C9B14 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -178,18 +178,18 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXVariantGroup section */
-		94E4C2161C6966A9000C9B14 /* Main.storyboard */ = {
+		94E3FED41C7E920800FBD017 /* Main.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
-				94E4C2171C6966A9000C9B14 /* Base */,
+				94E3FED51C7E920800FBD017 /* Base */,
 			);
 			name = Main.storyboard;
 			sourceTree = "<group>";
 		};
-		94E4C21B1C6966A9000C9B14 /* LaunchScreen.storyboard */ = {
+		94E3FED71C7E921400FBD017 /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
-				94E4C21C1C6966A9000C9B14 /* Base */,
+				94E3FED81C7E921400FBD017 /* Base */,
 			);
 			name = LaunchScreen.storyboard;
 			sourceTree = "<group>";
@@ -286,10 +286,10 @@
 					"$(inherited)",
 					"$(PROJECT_DIR)/Carthage/Build/iOS",
 				);
-				INFOPLIST_FILE = QiitaVIwer/Info.plist;
+				INFOPLIST_FILE = "$(SRCROOT)/QiitaViewer/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.sumida.QiitaVIwer;
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_BUNDLE_IDENTIFIER = com.sumida.QiitaViewer;
+				PRODUCT_NAME = QiitaViewer;
 			};
 			name = Debug;
 		};
@@ -301,17 +301,17 @@
 					"$(inherited)",
 					"$(PROJECT_DIR)/Carthage/Build/iOS",
 				);
-				INFOPLIST_FILE = QiitaVIwer/Info.plist;
+				INFOPLIST_FILE = "$(SRCROOT)/QiitaViewer/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.sumida.QiitaVIwer;
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_BUNDLE_IDENTIFIER = com.sumida.QiitaViewer;
+				PRODUCT_NAME = QiitaViewer;
 			};
 			name = Release;
 		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		94E4C20A1C6966A9000C9B14 /* Build configuration list for PBXProject "QiitaVIwer" */ = {
+		94E4C20A1C6966A9000C9B14 /* Build configuration list for PBXProject "QiitaViewer" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				94E4C21F1C6966A9000C9B14 /* Debug */,
@@ -320,7 +320,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		94E4C2211C6966A9000C9B14 /* Build configuration list for PBXNativeTarget "QiitaVIwer" */ = {
+		94E4C2211C6966A9000C9B14 /* Build configuration list for PBXNativeTarget "QiitaViewer" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				94E4C2221C6966A9000C9B14 /* Debug */,
