@@ -37,10 +37,12 @@ class WebViewController: UIViewController, UIWebViewDelegate {
         if (webView.loading) {
             return
         }
+        self.view.hideToastActivity()
         print("Finish！")
     }
 
     func webViewDidStartLoad(webView: UIWebView) {
+        self.view.makeToastActivity()
         print("Loading...")
     }
 }
