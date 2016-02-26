@@ -29,8 +29,8 @@ let HRToastPositionTop      =   "top"
 let HRToastPositionCenter   =   "center"
 
 // activity
-let HRToastActivityWidth  :  CGFloat  = 100.0
-let HRToastActivityHeight :  CGFloat  = 100.0
+let HRToastActivityWidth  :  CGFloat  = 60.0
+let HRToastActivityHeight :  CGFloat  = 60.0
 let HRToastActivityPositionDefault    = "center"
 
 // image size
