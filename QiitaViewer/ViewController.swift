@@ -12,6 +12,7 @@ import SwiftyJSON
 
 class ViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
     let table = UITableView()
+    let searchBar = UISearchBar()
     var articles: [[String: String?]] = []
     var page = 1
     let client = ApiClient()
@@ -21,7 +22,15 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
 
         title = "新着記事"
 
+        let statusHeight = UIApplication.sharedApplication().statusBarFrame.height
+        let navigationheight = self.navigationController?.navigationBar.frame.size.height
+        searchBar.frame = CGRectMake(0, 0, self.view.frame.width, 50)
+        searchBar.layer.position = CGPoint(x: self.view.bounds.width/2, y: navigationheight! + statusHeight + searchBar.frame.height / 2)
+        searchBar.searchBarStyle = UISearchBarStyle.Default
+        self.view.addSubview(searchBar)
+
         table.frame = view.frame
+        table.layer.position = CGPoint(x: self.view.bounds.width/2, y: navigationheight! + statusHeight + searchBar.frame.height + table.frame.height / 2)
         view.addSubview(table)
         table.dataSource = self
         table.delegate = self
