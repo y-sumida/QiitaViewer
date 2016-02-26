@@ -18,6 +18,8 @@ class WebViewController: UIViewController, UIWebViewDelegate {
         webview.frame = view.frame
         webview.delegate = self
         self.view.addSubview(webview)
+
+        self.view.makeToastActivity()
         
         openWeb()
         
@@ -39,10 +41,5 @@ class WebViewController: UIViewController, UIWebViewDelegate {
         }
         self.view.hideToastActivity()
         print("Finish！")
-    }
-
-    func webViewDidStartLoad(webView: UIWebView) {
-        self.view.makeToastActivity()
-        print("Loading...")
     }
 }
