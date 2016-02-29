@@ -113,6 +113,10 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
         self.client.getArticles(self.page)
     }
 
+    func searchBarCancelButtonClicked(searchBar: UISearchBar) {
+        self.searchBar.resignFirstResponder()
+    }
+
     func searchBarSearchButtonClicked(searchBar: UISearchBar) {
         searchBar.text = ""
         self.view.endEditing(true)
