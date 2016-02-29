@@ -28,6 +28,7 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
         searchBar.layer.position = CGPoint(x: self.view.bounds.width/2, y: navigationheight! + statusHeight + searchBar.frame.height / 2)
         searchBar.searchBarStyle = UISearchBarStyle.Default
         searchBar.delegate = self
+        searchBar.showsCancelButton = true
         self.view.addSubview(searchBar)
 
         table.frame = view.frame
