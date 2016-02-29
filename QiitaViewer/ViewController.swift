@@ -10,7 +10,7 @@ import UIKit
 import Alamofire
 import SwiftyJSON
 
-class ViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
+class ViewController: UIViewController, UITableViewDataSource, UITableViewDelegate, UISearchBarDelegate {
     let table = UITableView()
     let searchBar = UISearchBar()
     var articles: [[String: String?]] = []
@@ -27,6 +27,7 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
         searchBar.frame = CGRectMake(0, 0, self.view.frame.width, 50)
         searchBar.layer.position = CGPoint(x: self.view.bounds.width/2, y: navigationheight! + statusHeight + searchBar.frame.height / 2)
         searchBar.searchBarStyle = UISearchBarStyle.Default
+        searchBar.delegate = self
         self.view.addSubview(searchBar)
 
         table.frame = view.frame
@@ -109,6 +110,11 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
         self.table.reloadData()
 
         self.client.getArticles(self.page)
+    }
+
+    func searchBarSearchButtonClicked(searchBar: UISearchBar) {
+        searchBar.text = ""
+        self.view.endEditing(true)
     }
 }
 
