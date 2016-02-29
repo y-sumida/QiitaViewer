@@ -122,5 +122,9 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
         searchBar.text = ""
         self.view.endEditing(true)
     }
+
+    func scrollViewWillBeginDragging(scrollView: UIScrollView) {
+        self.searchBar.resignFirstResponder()
+    }
 }
 
