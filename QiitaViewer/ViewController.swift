@@ -94,6 +94,7 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
         let article = articles[indexPath.row]
         let url = article["url"]!
         self.showWebView("showWebPage", url: url!)
+        self.searchBar.resignFirstResponder()
     }
 
     func showWebView(next:String, url:String) {
