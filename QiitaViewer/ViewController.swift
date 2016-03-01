@@ -15,6 +15,7 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
     let searchBar = UISearchBar()
     var articles: [[String: String?]] = []
     var page = 1
+    var query = ""
     let client = ApiClient()
 
     override func viewDidLoad() {
@@ -82,7 +83,7 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
 
             // 最後のセル表示時にAPIコール
             if ((articles.count) - 1 == indexPath.row && self.page++ < 100) {
-                self.client.getArticles(self.page)
+                self.client.getArticles(self.page, query: self.query)
             }
         }
 
@@ -111,7 +112,7 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
         //self.table.contentOffset.y = 0
         self.table.reloadData()
 
-        self.client.getArticles(self.page)
+        self.client.getArticles(self.page, query: self.query)
     }
 
     func searchBarCancelButtonClicked(searchBar: UISearchBar) {
@@ -119,7 +120,12 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
     }
 
     func searchBarSearchButtonClicked(searchBar: UISearchBar) {
-        searchBar.text = ""
+        self.page = 1
+        self.articles = []
+        self.table.reloadData()
+        self.query = searchBar.text!
+
+        self.client.getArticles(self.page, query: self.query)
         self.view.endEditing(true)
     }
 

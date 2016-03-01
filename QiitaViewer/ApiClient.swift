@@ -12,8 +12,12 @@ import SwiftyJSON
 class ApiClient {
     var articles: [[String: String?]] = []
 
-    func getArticles(page: Int) {
-        Alamofire.request(.GET, "https://qiita.com/api/v2/items", parameters: ["page": page])
+    func getArticles(page: Int, query: String = "") {
+        var params:[String: AnyObject] = ["page": page]
+        if (query != "") {
+            params["query"] = query
+        }
+        Alamofire.request(.GET, "https://qiita.com/api/v2/items", parameters: params)
             .responseJSON { response in
                 guard let object = response.result.value else {
                     return
