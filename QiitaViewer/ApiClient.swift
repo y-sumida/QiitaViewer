@@ -17,6 +17,9 @@ class ApiClient {
         if (query != "") {
             params["query"] = query
         }
+
+        self.articles = []
+
         Alamofire.request(.GET, "https://qiita.com/api/v2/items", parameters: params)
             .responseJSON { response in
                 guard let object = response.result.value else {
