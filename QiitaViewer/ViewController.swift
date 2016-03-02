@@ -25,25 +25,25 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
 
         let statusHeight = UIApplication.sharedApplication().statusBarFrame.height
         let navigationheight = self.navigationController?.navigationBar.frame.size.height
-        searchBar.frame = CGRectMake(0, 0, self.view.frame.width, 50)
-        searchBar.layer.position = CGPoint(x: self.view.bounds.width/2, y: navigationheight! + statusHeight + searchBar.frame.height / 2)
-        searchBar.searchBarStyle = UISearchBarStyle.Default
-        searchBar.delegate = self
-        searchBar.showsCancelButton = true
-        self.view.addSubview(searchBar)
+        self.searchBar.frame = CGRectMake(0, 0, self.view.frame.width, 50)
+        self.searchBar.layer.position = CGPoint(x: self.view.bounds.width/2, y: navigationheight! + statusHeight + self.searchBar.frame.height / 2)
+        self.searchBar.searchBarStyle = UISearchBarStyle.Default
+        self.searchBar.delegate = self
+        self.searchBar.showsCancelButton = true
+        self.view.addSubview(self.searchBar)
 
-        table.frame = view.frame
-        table.layer.position = CGPoint(x: self.view.bounds.width/2, y: navigationheight! + statusHeight + searchBar.frame.height + table.frame.height / 2)
-        view.addSubview(table)
-        table.dataSource = self
-        table.delegate = self
+        self.table.frame = self.view.frame
+        self.table.layer.position = CGPoint(x: self.view.bounds.width/2, y: navigationheight! + statusHeight + self.searchBar.frame.height + self.table.frame.height / 2)
+        self.view.addSubview(table)
+        self.table.dataSource = self
+        self.table.delegate = self
 
         //一旦バウンドさせない設定にしてみる
-        table.bounces = false
+        self.table.bounces = false
 
         //セルの高さを動的にするため
-        table.estimatedRowHeight = 20
-        table.rowHeight = UITableViewAutomaticDimension
+        self.table.estimatedRowHeight = 20
+        self.table.rowHeight = UITableViewAutomaticDimension
 
         let reloadButton = UIBarButtonItem(barButtonSystemItem: UIBarButtonSystemItem.Refresh, target: self, action: "onClickReloadButton:")
         self.navigationItem.setRightBarButtonItem(reloadButton, animated: false)
@@ -61,19 +61,19 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
 
     func didFinisedRequest() {
         self.articles += self.client.articles
-        table.reloadData()
+        self.table.reloadData()
         self.view.hideToastActivity()
     }
 
     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return articles.count
+        return self.articles.count
     }
 
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         let cell = UITableViewCell(style: .Subtitle, reuseIdentifier: "cell")
 
-        if (articles.count > indexPath.row) {
-            let article = articles[indexPath.row]
+        if (self.articles.count > indexPath.row) {
+            let article = self.articles[indexPath.row]
 
             //セルの高さを動的にするため
             cell.textLabel?.numberOfLines = 0
@@ -92,7 +92,7 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
 
     func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
         print(indexPath.row)
-        let article = articles[indexPath.row]
+        let article = self.articles[indexPath.row]
         let url = article["url"]!
         self.showWebView("showWebPage", url: url!)
         self.searchBar.resignFirstResponder()
@@ -107,8 +107,8 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
     }
 
     func onClickReloadButton(sender: UIButton) {
-        page = 1
-        articles = []
+        self.page = 1
+        self.articles = []
         //self.table.contentOffset.y = 0
         self.table.reloadData()
 
@@ -123,7 +123,7 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
         self.page = 1
         self.articles = []
         self.table.reloadData()
-        self.query = searchBar.text!
+        self.query = self.searchBar.text!
 
         self.client.getArticles(self.page, query: self.query)
         self.view.endEditing(true)
