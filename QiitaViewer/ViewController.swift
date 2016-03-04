@@ -56,7 +56,6 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
     }
 
     func didFinisedRequest() {
@@ -109,7 +108,6 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
     func onClickReloadButton(sender: UIButton) {
         self.page = 1
         self.articles = []
-        //self.table.contentOffset.y = 0
         self.table.reloadData()
 
         self.client.getArticles(self.page, query: self.query)
