@@ -114,6 +114,8 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
     }
 
     func searchBarCancelButtonClicked(searchBar: UISearchBar) {
+        self.page = 1
+        self.query = ""
         self.searchBar.resignFirstResponder()
     }
 
