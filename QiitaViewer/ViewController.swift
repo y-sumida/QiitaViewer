@@ -83,6 +83,7 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
             // 最後のセル表示時にAPIコール
             if ((articles.count) - 1 == indexPath.row && self.page++ < 100) {
                 self.client.getArticles(self.page, query: self.query)
+                self.view.makeToastActivity()
             }
         }
 
@@ -111,6 +112,7 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
         self.table.reloadData()
 
         self.client.getArticles(self.page, query: self.query)
+        self.view.makeToastActivity()
     }
 
     func searchBarCancelButtonClicked(searchBar: UISearchBar) {
@@ -126,6 +128,7 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
         self.query = self.searchBar.text!
 
         self.client.getArticles(self.page, query: self.query)
+        self.view.makeToastActivity()
         self.view.endEditing(true)
     }
 
