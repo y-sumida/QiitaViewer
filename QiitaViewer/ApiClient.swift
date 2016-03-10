@@ -15,7 +15,7 @@ class ApiClient {
     func getArticles(page: Int, query: String = "") {
         var params:[String: AnyObject] = ["page": page]
         if (query != "") {
-            params["query"] = query
+            params["query"] = query.stringByReplacingOccurrencesOfString(" ", withString: "+")
         }
 
         self.articles = []
