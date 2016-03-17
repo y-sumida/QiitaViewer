@@ -13,7 +13,7 @@ import SwiftyJSON
 class ViewController: UIViewController, UITableViewDataSource, UITableViewDelegate, UISearchBarDelegate {
     let table = UITableView()
     let searchBar = UISearchBar()
-    var articles: [[String: String?]] = []
+    var articles: [Article] = []
     var page = 1
     var query = ""
     let client = ApiClient()
@@ -77,8 +77,13 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
             //セルの高さを動的にするため
             cell.textLabel?.numberOfLines = 0
 
-            cell.textLabel?.text = article["title"]!
-            cell.detailTextLabel?.text = article["userId"]!
+            if let title = article.title {
+                cell.textLabel?.text = title
+            }
+            
+            if let userId = article.userId {
+                cell.detailTextLabel?.text = userId
+            }
 
             // 最後のセル表示時にAPIコール
             if ((articles.count) - 1 == indexPath.row && self.page++ < 100) {
@@ -93,8 +98,9 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
     func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
         print(indexPath.row)
         let article = self.articles[indexPath.row]
-        let url = article["url"]!
-        self.showWebView("showWebPage", url: url!)
+        if let url = article.url {
+            self.showWebView("showWebPage", url: url)
+        }
         self.searchBar.resignFirstResponder()
     }
 

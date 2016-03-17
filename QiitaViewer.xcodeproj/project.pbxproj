@@ -12,6 +12,8 @@
 		94E3FED61C7E920800FBD017 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 94E3FED41C7E920800FBD017 /* Main.storyboard */; };
 		94E3FED91C7E921400FBD017 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 94E3FED71C7E921400FBD017 /* LaunchScreen.storyboard */; };
 		94E3FEDB1C7EDD1800FBD017 /* HRToast+UIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94E3FEDA1C7EDD1800FBD017 /* HRToast+UIView.swift */; };
+		94E3FEDD1C9A2F2300FBD017 /* ObjectMapper.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 94E3FEDC1C9A2F2300FBD017 /* ObjectMapper.framework */; };
+		94E3FEDF1C9A2F7400FBD017 /* Article.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94E3FEDE1C9A2F7400FBD017 /* Article.swift */; };
 		94E4C2131C6966A9000C9B14 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94E4C2121C6966A9000C9B14 /* AppDelegate.swift */; };
 		94E4C2151C6966A9000C9B14 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94E4C2141C6966A9000C9B14 /* ViewController.swift */; };
 		94E4C21A1C6966A9000C9B14 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 94E4C2191C6966A9000C9B14 /* Assets.xcassets */; };
@@ -25,6 +27,8 @@
 		94E3FED51C7E920800FBD017 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		94E3FED81C7E921400FBD017 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		94E3FEDA1C7EDD1800FBD017 /* HRToast+UIView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "HRToast+UIView.swift"; path = "lib/HRToast+UIView.swift"; sourceTree = "<group>"; };
+		94E3FEDC1C9A2F2300FBD017 /* ObjectMapper.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ObjectMapper.framework; path = Carthage/Build/iOS/ObjectMapper.framework; sourceTree = "<group>"; };
+		94E3FEDE1C9A2F7400FBD017 /* Article.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Article.swift; sourceTree = "<group>"; };
 		94E4C20F1C6966A9000C9B14 /* QiitaViewer.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = QiitaViewer.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		94E4C2121C6966A9000C9B14 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		94E4C2141C6966A9000C9B14 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -39,6 +43,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				94E3FEDD1C9A2F2300FBD017 /* ObjectMapper.framework in Frameworks */,
 				94E4C2271C696840000C9B14 /* SwiftyJSON.framework in Frameworks */,
 				94E4C2251C696835000C9B14 /* Alamofire.framework in Frameworks */,
 			);
@@ -50,6 +55,7 @@
 		94E4C2061C6966A9000C9B14 = {
 			isa = PBXGroup;
 			children = (
+				94E3FEDC1C9A2F2300FBD017 /* ObjectMapper.framework */,
 				94E4C2261C696840000C9B14 /* SwiftyJSON.framework */,
 				94E4C2241C696835000C9B14 /* Alamofire.framework */,
 				94E4C2111C6966A9000C9B14 /* QiitaViewer */,
@@ -72,6 +78,7 @@
 				94570A0E1C7D32AE0060E81C /* ApiClient.swift */,
 				94E4C2121C6966A9000C9B14 /* AppDelegate.swift */,
 				94E4C2141C6966A9000C9B14 /* ViewController.swift */,
+				94E3FEDE1C9A2F7400FBD017 /* Article.swift */,
 				94E4C2191C6966A9000C9B14 /* Assets.xcassets */,
 				94E4C21E1C6966A9000C9B14 /* Info.plist */,
 				94570A0C1C72A29D0060E81C /* WebViewController.swift */,
@@ -157,6 +164,7 @@
 			inputPaths = (
 				"$(SRCROOT)/Carthage/Build/iOS/Alamofire.framework",
 				"$(SRCROOT)/Carthage/Build/iOS/SwiftyJSON.framework",
+				"$(SRCROOT)/Carthage/Build/iOS/ObjectMapper.framework",
 			);
 			outputPaths = (
 			);
@@ -173,6 +181,7 @@
 			files = (
 				94E4C2151C6966A9000C9B14 /* ViewController.swift in Sources */,
 				94E3FEDB1C7EDD1800FBD017 /* HRToast+UIView.swift in Sources */,
+				94E3FEDF1C9A2F7400FBD017 /* Article.swift in Sources */,
 				94E4C2131C6966A9000C9B14 /* AppDelegate.swift in Sources */,
 				94570A0D1C72A29D0060E81C /* WebViewController.swift in Sources */,
 				94570A0F1C7D32AE0060E81C /* ApiClient.swift in Sources */,
@@ -291,6 +300,7 @@
 					"$(PROJECT_DIR)/Carthage/Build/iOS",
 				);
 				INFOPLIST_FILE = "$(SRCROOT)/QiitaViewer/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 9.2;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.sumida.QiitaViewer;
 				PRODUCT_NAME = QiitaViewer;
@@ -306,6 +316,7 @@
 					"$(PROJECT_DIR)/Carthage/Build/iOS",
 				);
 				INFOPLIST_FILE = "$(SRCROOT)/QiitaViewer/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 9.2;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.sumida.QiitaViewer;
 				PRODUCT_NAME = QiitaViewer;

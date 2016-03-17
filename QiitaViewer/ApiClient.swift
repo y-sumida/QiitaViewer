@@ -8,9 +8,10 @@
 
 import Alamofire
 import SwiftyJSON
+import ObjectMapper
 
 class ApiClient {
-    var articles: [[String: String?]] = []
+    var articles: [Article] = []
 
     func getArticles(page: Int, query: String = "") {
         var params:[String: AnyObject] = ["page": page]
@@ -22,19 +23,19 @@ class ApiClient {
 
         Alamofire.request(.GET, "https://qiita.com/api/v2/items", parameters: params)
             .responseJSON { response in
-                guard let object = response.result.value else {
-                    return
+                switch response.result {
+                case .Success(let value):
+                    if let articles = value as? NSArray {
+                        for article in articles {
+                            if article as? NSDictionary != nil {
+                                self.articles.append(Mapper<Article>().map(article)!)
+                            }
+                        }
+                    }
+                case .Failure(let error):
+                    print(error)
                 }
 
-                let json = JSON(object)
-                json.forEach { (_, json) in
-                    let article: [String: String?] = [
-                        "title": json["title"].string,
-                        "userId": json["user"]["id"].string,
-                        "url": json["url"].string
-                    ]
-                    self.articles.append(article)
-                }
                 NSNotificationCenter.defaultCenter().postNotificationName("GotArticles", object: nil, userInfo:nil)
         }
     }
