@@ -18,7 +18,6 @@
 		94E4C2151C6966A9000C9B14 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94E4C2141C6966A9000C9B14 /* ViewController.swift */; };
 		94E4C21A1C6966A9000C9B14 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 94E4C2191C6966A9000C9B14 /* Assets.xcassets */; };
 		94E4C2251C696835000C9B14 /* Alamofire.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 94E4C2241C696835000C9B14 /* Alamofire.framework */; };
-		94E4C2271C696840000C9B14 /* SwiftyJSON.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 94E4C2261C696840000C9B14 /* SwiftyJSON.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -44,7 +43,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				94E3FEDD1C9A2F2300FBD017 /* ObjectMapper.framework in Frameworks */,
-				94E4C2271C696840000C9B14 /* SwiftyJSON.framework in Frameworks */,
 				94E4C2251C696835000C9B14 /* Alamofire.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -163,7 +161,6 @@
 			);
 			inputPaths = (
 				"$(SRCROOT)/Carthage/Build/iOS/Alamofire.framework",
-				"$(SRCROOT)/Carthage/Build/iOS/SwiftyJSON.framework",
 				"$(SRCROOT)/Carthage/Build/iOS/ObjectMapper.framework",
 			);
 			outputPaths = (
